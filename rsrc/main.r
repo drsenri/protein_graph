@@ -15,3 +15,9 @@ require(graphkernels)
 
 # read_data ---------------------------------------------------------------
 # all files were downloaded from http://hint.yulab.org/download/ at 2018/05/30
+
+d <- dir("data", full.names = T) %>% lapply(fread, data.table = F)
+names(d) <- dir("data") %>% str_remove("_binary_hq.txt$")
+
+# convert to graph --------------------------------------------------------
+
