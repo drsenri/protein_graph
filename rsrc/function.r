@@ -12,8 +12,10 @@
 #' プロパティの付与はしない (辺のみのデータにする)
 #'
 #' @examples
-#' df <- fread("data/HomoSapiens_binary_hq.txt", data.table = F)
+#' df <- data.frame(Gene_A = c("RRP9", "TRIM21", "PSMA7", "RPS16", "TRIM23"),
+#'  Gene_B = c("RAP2A", "TXN2", "PSMB7", "ESR2", "RSRC2"), sources = c("HT", "HT", "LC", "HT", "HT"))
 #' convert_graph(df, left = "Gene_A", right = "Gene_B")
 #' 
 convert_graph <- function(df, left, right, directed = F)
   df %>% select(left, right) %>% graph_from_data_frame(directed = directed)
+
