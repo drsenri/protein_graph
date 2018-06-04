@@ -21,3 +21,8 @@ names(d) <- dir("data") %>% str_remove("_binary_hq.txt$")
 
 # convert to graph --------------------------------------------------------
 
+d_graph <- d %>% map(convert_graph, left = "Gene_A", right = "Gene_B")
+
+
+# WL kernel ---------------------------------------------------------------
+
