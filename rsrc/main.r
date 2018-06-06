@@ -37,7 +37,7 @@ names(cluster) <- names(d_graph)
 
 # plot --------------------------------------------------------------------
 
-pca <- WLmat %>% prcomp
+pca <- WLmat %>% prcomp(scale = T)
 dir.create("output")
 png("output/180604_species_cluster.png")
 plot(x = pca$x[,1], y = pca$x[,2], col = cluster)
